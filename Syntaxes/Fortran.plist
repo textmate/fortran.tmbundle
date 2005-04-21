@@ -2,6 +2,7 @@
 	// Fortran 77/90 -- chris@cjack.com. Feel free to modify, distribute, be happy. Share and enjoy.
 	
 	name = "Fortran";
+	scopeName = "source.fortran";
 	fileTypes = ( f, for, FOR, fpp, FPP, f77, f90, f95 );
 //	foldingStartMarker = "(/\\*\\*|\\{\\s*$)";
 //	foldingStopMarker = "(\\*\\*/|^\\s*\\})";

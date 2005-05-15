@@ -6,7 +6,7 @@
 	fileTypes = ( f, for, FOR, fpp, FPP, f77, f90, f95 );
 //	foldingStartMarker = "(/\\*\\*|\\{\\s*$)";
 //	foldingStopMarker = "(\\*\\*/|^\\s*\\})";
-	increaseIndentPattern = "\\<(?i:(IF|DO))\\>";
+	increaseIndentPattern = "\\b(?i:(IF|DO))\\b";
 	smartTypingPairs = (
 	   ( "(", ")" ), ( "[", "]" ), ( "{", "}" ),
 	   ( "\"", "\"" ), ( "'", "'" )
@@ -20,26 +20,26 @@
 		
 		{
 			name = "keyword.fortran.NonExecutable";
-			match = "\\<(?i:(BLOCK\sDATA|CHARACTER|COMMON|DATA|DIMENSION|DOUBLE\\sPRECISION|ENTRY|EQUIVALENCE|EXTERNAL|FORMAT|FUNCTION|IMPLICIT|INTEGER|INTRINSIC|LOGICAL|PARAMETER|PROGRAM|REAL|SAVE|SUBROUTINE))\\>";
+			match = "\\b(?i:(BLOCK\sDATA|CHARACTER|COMMON|DATA|DIMENSION|DOUBLE\\sPRECISION|ENTRY|EQUIVALENCE|EXTERNAL|FORMAT|FUNCTION|IMPLICIT|INTEGER|INTRINSIC|LOGICAL|PARAMETER|PROGRAM|REAL|SAVE|SUBROUTINE))\\b";
 		},
 		{
 			name = "keyword.fortran.Executable";
-			match = "\\<(?i:(ASSIGN|BACKSPACE|CALL|CLOSE|CONTINUE|DO|END|ENDFILE|GO\\sTO|IF|THEN|ELSE|INQUIRE|OPEN|PRINT|READ|RETURN|REWIND|STOP|WRITE))\\>";
+			match = "\\b(?i:(ASSIGN|BACKSPACE|CALL|CLOSE|CONTINUE|DO|END|ENDFILE|GO\\sTO|IF|THEN|ELSE|INQUIRE|OPEN|PRINT|READ|RETURN|REWIND|STOP|WRITE))\\b";
 		},
 
 		{
 			name = "keyword.operator.fortran";
-			match = "\\<(?i:(\\.GT\\.|\\.GE\\.|\\.LT\\.|\\.LE\\.|\\.EQ\\.|\\.NE\\.|\\.NOT\\.|\\.AND\\.|\\.OR\\.|\\.EQV\\.|\\.NEQV\\.))\\>";
+			match = "\\b(?i:(\\.GT\\.|\\.GE\\.|\\.LT\\.|\\.LE\\.|\\.EQ\\.|\\.NE\\.|\\.NOT\\.|\\.AND\\.|\\.OR\\.|\\.EQV\\.|\\.NEQV\\.))\\b";
 		},
 		
-		{ name = "constant.numeric.fortran"; match = "\\<((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\>"; },
+		{ name = "constant.numeric.fortran"; match = "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b"; },
 		{ name = "string.single-quoted.fortran"; begin = "'"; end = "'"; swallow = "\\\\."; },
 		
 		{ name = "comment.line.fortran.modern"; match = "!.*$"; },
 		
 		{
 			name = "keyword.Fortran90";
-			match = "\\<(?i:(MODULE|USE|PRIVATE|PUBLIC|RECURSIVE|INTENT|OPTIONAL))\\>";
+			match = "\\b(?i:(MODULE|USE|PRIVATE|PUBLIC|RECURSIVE|INTENT|OPTIONAL))\\b";
 		},
 
 	);

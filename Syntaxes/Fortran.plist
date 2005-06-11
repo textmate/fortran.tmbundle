@@ -19,11 +19,11 @@
 		{ name = "comment.line.fortran.punchcard-style"; match = "(?s:(^C(.*)$))"; },
 		
 		{
-			name = "keyword.fortran.NonExecutable";
+			name = "keyword.other.NonExecutable.fortran";
 			match = "\\b(?i:(BLOCK\sDATA|CHARACTER|COMMON|DATA|DIMENSION|DOUBLE\\sPRECISION|ENTRY|EQUIVALENCE|EXTERNAL|FORMAT|FUNCTION|IMPLICIT|INTEGER|INTRINSIC|LOGICAL|PARAMETER|PROGRAM|REAL|SAVE|SUBROUTINE))\\b";
 		},
 		{
-			name = "keyword.fortran.Executable";
+			name = "keyword.other.Executable.fortran";
 			match = "\\b(?i:(ASSIGN|BACKSPACE|CALL|CLOSE|CONTINUE|DO|END|ENDFILE|GO\\sTO|IF|THEN|ELSE|INQUIRE|OPEN|PRINT|READ|RETURN|REWIND|STOP|WRITE))\\b";
 		},
 
@@ -33,12 +33,12 @@
 		},
 		
 		{ name = "constant.numeric.fortran"; match = "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b"; },
-		{ name = "string.single-quoted.fortran"; begin = "'"; end = "'"; swallow = "\\\\."; },
+		{ name = "string.quoted.single.fortran"; begin = "'"; end = "'"; swallow = "\\\\."; },
 		
 		{ name = "comment.line.fortran.modern"; match = "!.*$"; },
 		
 		{
-			name = "keyword.Fortran90";
+			name = "keyword.other.Fortran90";
 			match = "\\b(?i:(MODULE|USE|PRIVATE|PUBLIC|RECURSIVE|INTENT|OPTIONAL))\\b";
 		},
 

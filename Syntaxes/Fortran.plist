@@ -16,7 +16,7 @@
 	);
 	patterns = (
 		
-		{ name = "comment.line.fortran.punchcard-style"; match = "(?s:(^C(.*)$))"; },
+		{ name = "comment.line.fortran.punchcard-style"; match = "^C(.*)$"; },
 		
 		{
 			name = "keyword.other.NonExecutable.fortran";

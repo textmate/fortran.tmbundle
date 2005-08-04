@@ -1,47 +1,82 @@
-{
-	// Fortran 77/90 -- chris@cjack.com. Feel free to modify, distribute, be happy. Share and enjoy.
-	
-	name = "Fortran";
-	scopeName = "source.fortran";
-	fileTypes = ( f, for, FOR, fpp, FPP, f77, f90, f95 );
-//	foldingStartMarker = "(/\\*\\*|\\{\\s*$)";
-//	foldingStopMarker = "(\\*\\*/|^\\s*\\})";
-	increaseIndentPattern = "\\b(?i:(IF|DO))\\b";
-	smartTypingPairs = (
-	   ( "(", ")" ), ( "[", "]" ), ( "{", "}" ),
-	   ( "\"", "\"" ), ( "'", "'" )
-	);
-	highlightPairs = (
-	   ( "(", ")" ), ( "[", "]" ), ( "{", "}" )
-	);
-	patterns = (
-		
-		{ name = "comment.line.fortran.punchcard-style"; match = "^C(.*)$"; },
-		
-		{
-			name = "keyword.other.NonExecutable.fortran";
-			match = "\\b(?i:(BLOCK\sDATA|CHARACTER|COMMON|DATA|DIMENSION|DOUBLE\\sPRECISION|ENTRY|EQUIVALENCE|EXTERNAL|FORMAT|FUNCTION|IMPLICIT|INTEGER|INTRINSIC|LOGICAL|PARAMETER|PROGRAM|REAL|SAVE|SUBROUTINE))\\b";
-		},
-		{
-			name = "keyword.other.Executable.fortran";
-			match = "\\b(?i:(ASSIGN|BACKSPACE|CALL|CLOSE|CONTINUE|DO|END|ENDFILE|GO\\sTO|IF|THEN|ELSE|INQUIRE|OPEN|PRINT|READ|RETURN|REWIND|STOP|WRITE))\\b";
-		},
-
-		{
-			name = "keyword.operator.fortran";
-			match = "\\b(?i:(\\.GT\\.|\\.GE\\.|\\.LT\\.|\\.LE\\.|\\.EQ\\.|\\.NE\\.|\\.NOT\\.|\\.AND\\.|\\.OR\\.|\\.EQV\\.|\\.NEQV\\.))\\b";
-		},
-		
-		{ name = "constant.numeric.fortran"; match = "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b"; },
-		{ name = "string.quoted.single.fortran"; begin = "'"; end = "'"; swallow = "\\\\."; },
-		
-		{ name = "comment.line.fortran.modern"; match = "!.*$"; },
-		
-		{
-			name = "keyword.other.Fortran90";
-			match = "\\b(?i:(MODULE|USE|PRIVATE|PUBLIC|RECURSIVE|INTENT|OPTIONAL))\\b";
-		},
-
-	);
-	uuid = "1BA1536A-6B1D-11D9-B849-000D93589AF6";
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>comment</key>
+	<string>Fortran 77/90 -- chris@cjack.com. Feel free to modify, distribute, be happy. Share and enjoy.</string>
+	<key>fileTypes</key>
+	<array>
+		<string>f</string>
+		<string>for</string>
+		<string>FOR</string>
+		<string>fpp</string>
+		<string>FPP</string>
+		<string>f77</string>
+		<string>f90</string>
+		<string>f95</string>
+		<string>F90</string>
+		<string>F95</string>
+	</array>
+	<key>name</key>
+	<string>Fortran</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>^C(.*)$</string>
+			<key>name</key>
+			<string>comment.line.fortran.punchcard-style</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(BLOCKsDATA|CHARACTER|COMMON|DATA|DIMENSION|DOUBLE\sPRECISION|ENTRY|EQUIVALENCE|EXTERNAL|FORMAT|FUNCTION|IMPLICIT|INTEGER|INTRINSIC|LOGICAL|PARAMETER|PROGRAM|REAL|SAVE|SUBROUTINE))\b</string>
+			<key>name</key>
+			<string>keyword.other.NonExecutable.fortran</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(ASSIGN|BACKSPACE|CALL|CLOSE|CONTINUE|DO|END|ENDFILE|GO\sTO|IF|THEN|ELSE|INQUIRE|OPEN|PRINT|READ|RETURN|REWIND|STOP|WRITE))\b</string>
+			<key>name</key>
+			<string>keyword.other.Executable.fortran</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(\.GT\.|\.GE\.|\.LT\.|\.LE\.|\.EQ\.|\.NE\.|\.NOT\.|\.AND\.|\.OR\.|\.EQV\.|\.NEQV\.))\b</string>
+			<key>name</key>
+			<string>keyword.operator.fortran</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+			<key>name</key>
+			<string>constant.numeric.fortran</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>end</key>
+			<string>'</string>
+			<key>name</key>
+			<string>string.quoted.single.fortran</string>
+			<key>swallow</key>
+			<string>\\.</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>!.*$</string>
+			<key>name</key>
+			<string>comment.line.fortran.modern</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(MODULE|USE|PRIVATE|PUBLIC|RECURSIVE|INTENT|OPTIONAL))\b</string>
+			<key>name</key>
+			<string>keyword.other.Fortran90</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.fortran</string>
+	<key>uuid</key>
+	<string>1BA1536A-6B1D-11D9-B849-000D93589AF6</string>
+</dict>
+</plist>

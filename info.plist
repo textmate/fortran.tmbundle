@@ -4,6 +4,11 @@
 <dict>
 	<key>name</key>
 	<string>Fortran</string>
+	<key>ordering</key>
+	<array>
+		<string>1BA1536A-6B1D-11D9-B849-000D93589AF6</string>
+		<string>FABD51CF-B183-4349-B8A5-61CDF4D156A8</string>
+	</array>
 	<key>uuid</key>
 	<string>4676D96B-6227-11D9-BFB1-000D93589AF6</string>
 </dict>

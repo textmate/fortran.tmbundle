@@ -17,6 +17,8 @@
 		<string>F90</string>
 		<string>F95</string>
 	</array>
+	<key>keyEquivalent</key>
+	<string>^~F</string>
 	<key>name</key>
 	<string>Fortran</string>
 	<key>patterns</key>
@@ -47,7 +49,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))([eEdD](\+|-)?[0-9]+)?)(_[a-zA-Z]+)?\b</string>
 			<key>name</key>
 			<string>constant.numeric.fortran</string>
 		</dict>

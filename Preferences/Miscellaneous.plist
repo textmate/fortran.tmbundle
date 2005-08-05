@@ -9,7 +9,7 @@
 	<key>settings</key>
 	<dict>
 		<key>decreaseIndentPattern</key>
-		<string>^\s+END$</string>
+		<string>^\s+(?i:END)$</string>
 		<key>highlightPairs</key>
 		<array>
 			<array>
@@ -26,7 +26,7 @@
 			</array>
 		</array>
 		<key>increaseIndentPattern</key>
-		<string>\b(?i:(IF|DO))\b</string>
+		<string>\b(?i:IF|DO)\b</string>
 	</dict>
 	<key>uuid</key>
 	<string>FABD51CF-B183-4349-B8A5-61CDF4D156A8</string>

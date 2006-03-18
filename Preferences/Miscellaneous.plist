@@ -27,6 +27,27 @@
 		</array>
 		<key>increaseIndentPattern</key>
 		<string>\b(?i:IF|DO)\b</string>
+		<key>shellVariables</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>TM_COMMENT_START</string>
+				<key>value</key>
+				<string>C </string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>TM_COMMENT_END</string>
+				<key>value</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>TM_COMMENT_MODE</string>
+				<key>value</key>
+				<string>line</string>
+			</dict>
+		</array>
 	</dict>
 	<key>uuid</key>
 	<string>FABD51CF-B183-4349-B8A5-61CDF4D156A8</string>

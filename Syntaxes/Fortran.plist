@@ -26,8 +26,35 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>begin</key>
+			<string>(?x)
+                (?: (?i:SUBROUTINE\s+) | (?i:FUNCTION\s+) )
+              	([A-Za-z_][A-Za-z0-9_:]+)
+              	 \s*\((?=[^)\n]*)
+              </string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.fortran</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>name</key>
+			<string>declaration.function.fortran</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$base</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>match</key>
-			<string>^C(.*)$</string>
+			<string>^[Cc] (.*)$</string>
 			<key>name</key>
 			<string>comment.line.fortran.punchcard-style</string>
 		</dict>

@@ -100,7 +100,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>!.*$</string>
+			<string>(?x) (?: (^[\*!] .*$) | (?:! .*))</string>
 			<key>name</key>
 			<string>comment.line.fortran.modern</string>
 		</dict>

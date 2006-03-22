@@ -33,7 +33,7 @@
 				<key>name</key>
 				<string>TM_COMMENT_START</string>
 				<key>value</key>
-				<string>C </string>
+				<string>! </string>
 			</dict>
 			<dict>
 				<key>name</key>

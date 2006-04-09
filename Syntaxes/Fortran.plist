@@ -94,13 +94,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*#.*$</string>
+			<string>^\s*#.*$\n?</string>
 			<key>name</key>
 			<string>entity.name.preprocessor</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x) (?: (^[\*!] .*$) | (?:! .*))</string>
+			<string>(?x) (?: (^[\*!] .*$\n?) | (?:! .*$\n?))</string>
 			<key>name</key>
 			<string>comment.line.fortran.modern</string>
 		</dict>

@@ -16,6 +16,7 @@
 		<string>f95</string>
 		<string>F90</string>
 		<string>F95</string>
+		<string>F</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>(?i)-[*]- mode: f90 -[*]-</string>

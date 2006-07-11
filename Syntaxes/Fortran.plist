@@ -44,7 +44,7 @@
 			<key>end</key>
 			<string>\)</string>
 			<key>name</key>
-			<string>declaration.function.fortran</string>
+			<string>meta.function.fortran</string>
 			<key>patterns</key>
 			<array>
 				<dict>

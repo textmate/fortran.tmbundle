@@ -57,7 +57,7 @@
 			<key>match</key>
 			<string>^[Cc] (.*)$</string>
 			<key>name</key>
-			<string>comment.line.fortran.punchcard-style</string>
+			<string>comment.line.c.fortran.punchcard-style</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -101,9 +101,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x) (?: (^[\*!] .*$\n?) | (?:! .*$\n?))</string>
+			<string>(?x) (?: (^[!] .*$\n?) | (?:! .*$\n?))</string>
 			<key>name</key>
-			<string>comment.line.fortran.modern</string>
+			<string>comment.line.exclamation.fortran.modern</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(^\*.*$\n?)</string>
+			<key>name</key>
+			<string>comment.line.asterisk.fortran.modern</string>
 		</dict>
 		<dict>
 			<key>match</key>

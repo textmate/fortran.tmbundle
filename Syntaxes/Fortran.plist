@@ -97,7 +97,7 @@
 			<key>match</key>
 			<string>^\s*#.*$\n?</string>
 			<key>name</key>
-			<string>entity.name.preprocessor</string>
+			<string>keyword.control.import</string>
 		</dict>
 		<dict>
 			<key>match</key>

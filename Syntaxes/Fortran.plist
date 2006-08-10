@@ -90,8 +90,15 @@
 			<string>'</string>
 			<key>name</key>
 			<string>string.quoted.single.fortran</string>
-			<key>swallow</key>
-			<string>\\.</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.fortran</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>

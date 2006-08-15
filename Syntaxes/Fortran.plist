@@ -63,13 +63,13 @@
 			<key>match</key>
 			<string>\b(?i:(BLOCKsDATA|CHARACTER|COMMON|DATA|DIMENSION|DOUBLE\sPRECISION|ENTRY|EQUIVALENCE|EXTERNAL|FORMAT|FUNCTION|IMPLICIT|INTEGER|INTRINSIC|LOGICAL|PARAMETER|PROGRAM|REAL|SAVE|SUBROUTINE))\b</string>
 			<key>name</key>
-			<string>keyword.other.NonExecutable.fortran</string>
+			<string>keyword.other.non-executable.fortran</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b(?i:(ASSIGN|BACKSPACE|CALL|CLOSE|CONTINUE|DO|END|ENDFILE|GO\sTO|IF|THEN|ELSE|INQUIRE|OPEN|PRINT|READ|RETURN|REWIND|STOP|WRITE))\b</string>
 			<key>name</key>
-			<string>keyword.other.Executable.fortran</string>
+			<string>keyword.other.executable.fortran</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -104,7 +104,7 @@
 			<key>match</key>
 			<string>^\s*#.*$\n?</string>
 			<key>name</key>
-			<string>keyword.control.import</string>
+			<string>keyword.control.import.fortran</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -122,7 +122,7 @@
 			<key>match</key>
 			<string>\b(?i:(MODULE|USE|PRIVATE|PUBLIC|RECURSIVE|INTENT|OPTIONAL))\b</string>
 			<key>name</key>
-			<string>keyword.other.Fortran90</string>
+			<string>keyword.other.fortran.90</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

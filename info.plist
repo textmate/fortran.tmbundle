@@ -2,14 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>21AF6BCC-5AD2-4B47-8A6B-0EB7F27BD97C</string>
+			<string>ED1485C9-393F-4B62-A8E8-62B242E4C7CF</string>
+			<string>------------------------------------</string>
+			<string>B907E3F4-F0DD-41BF-8148-98486B9F7654</string>
+		</array>
+		<key>submenus</key>
+		<dict/>
+	</dict>
 	<key>name</key>
 	<string>Fortran</string>
 	<key>ordering</key>
 	<array>
-		<string>1BA1536A-6B1D-11D9-B849-000D93589AF6</string>
-		<string>FABD51CF-B183-4349-B8A5-61CDF4D156A8</string>
+		<string>21AF6BCC-5AD2-4B47-8A6B-0EB7F27BD97C</string>
+		<string>ED1485C9-393F-4B62-A8E8-62B242E4C7CF</string>
+		<string>B907E3F4-F0DD-41BF-8148-98486B9F7654</string>
+		<string>45253F88-F7CC-49C5-9C32-F3FADD2AB579</string>
+		<string>00465FB7-057F-4E7E-AFAC-B059DB0C03CF</string>
+		<string>77FE8E31-891F-498D-990B-1B3AF6986DB6</string>
+		<string>3A48C5DB-0AB8-42FD-8F99-84C30C155168</string>
+		<string>98C10307-DA03-4243-A9BC-BE4C6708E5F5</string>
 	</array>
 	<key>uuid</key>
-	<string>4676D96B-6227-11D9-BFB1-000D93589AF6</string>
+	<string>1F0EE883-C3DA-4AD4-82F2-6795F0B2CA7B</string>
 </dict>
 </plist>

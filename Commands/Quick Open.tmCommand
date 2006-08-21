@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>line=$TM_CURRENT_LINE
+header=$TM_SELECTED_TEXT
+
+# extract header from current line
+if [[ -z "$header" ]] &amp;&amp; $(egrep -q &lt;&lt;&lt;"$line" '#(import|include)'); then
+   header=$(sed -n &lt;&lt;&lt;"$line" 's/[^&lt;"]*[&lt;"]\([^"&gt;]*\).*/\1/p')
+fi
+
+# ask user about header
+if [[ -z "$header" ]]; then
+   res=$(CocoaDialog inputbox --title "Open Header Quickly" --no-newline --informative-text "Header name?"  --text "foobar"  --button1 "Open" --button2 "Cancel")
+   [[ $(head -n1 &lt;&lt;&lt;"$res") == "2" ]] &amp;&amp; exit
+   header=$(tail -n1 &lt;&lt;&lt;"$res")
+fi
+
+# If Spotlight is available, avail ourselves of it.
+# otherwise, use the old 'find'-based method.
+#
+# The Spotlight method has the advantage of being
+# both reasonably fast and catching all the corner
+# cases, many of which are missed by the old method.
+#
+if [[ `which mdfind` != *"not found" ]]; then
+	# we have Spotlight
+	files=`${TM_RUBY:-ruby} "$TM_BUNDLE_SUPPORT/SpotlightSearch.rb" "$header"`
+else
+	# old method
+	arr=("/usr/include"
+	"${TM_PROJECT_DIRECTORY:-$TM_DIRECTORY}"
+	)
+
+	files=$(for dir in "${arr[@]}";
+		do find "$dir" -path "*/$header"; done|sort|uniq)
+fi
+
+if [[ -n "$files" ]];
+   then IFS=$'\n'; mate $files &amp;&gt;/dev/null &amp;
+   else echo "No headers found."
+fi
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@D</string>
+	<key>name</key>
+	<string>Quick Open</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>uuid</key>
+	<string>ED1485C9-393F-4B62-A8E8-62B242E4C7CF</string>
+</dict>
+</plist>

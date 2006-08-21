@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string># Source some support functions we need.
+. "${TM_SUPPORT_PATH}/lib/html.sh"
+
+cd ${TM_DIRECTORY}
+
+htmlHeader "Compiling Fortran"
+echo "&lt;h1&gt;Starting Fortran Compile&lt;/h1&gt;"
+echo
+
+# Check if we actually have a fortran compiler
+: ${TM_FORTRAN:=gfortran}
+require_cmd "$TM_FORTRAN" "You must set the &lt;tt&gt;TM_FORTRAN&lt;/tt&gt; variable to the full path of your Fortran compiler (e.g. &lt;tt&gt;/usr/local/bin/gfortran&lt;/tt&gt;). You may also set &lt;tt&gt;TM_FFLAGS&lt;/tt&gt; for any Fortran compiler options."
+
+"$TM_FORTRAN" $TM_FFLAGS "$TM_FILEPATH"
+status=$?
+if [[ "${status}" -ne "0" ]]; then
+	echo "&lt;h1&gt;Compilation Failed&lt;/h1&gt;"
+else
+	echo "&lt;h1&gt;Successfully compiled a.out&lt;/h1&gt;"
+	closeWindow
+fi
+htmlFooter
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Compile Single File</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>uuid</key>
+	<string>21AF6BCC-5AD2-4B47-8A6B-0EB7F27BD97C</string>
+</dict>
+</plist>

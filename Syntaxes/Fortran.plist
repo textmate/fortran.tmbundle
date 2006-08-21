@@ -2,24 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>comment</key>
-	<string>Fortran 77/90 -- chris@cjack.com. Feel free to modify, distribute, be happy. Share and enjoy.</string>
 	<key>fileTypes</key>
 	<array>
 		<string>f</string>
+		<string>F</string>
+		<string>f77</string>
+		<string>F77</string>
+		<string>f90</string>
+		<string>F90</string>
+		<string>f95</string>
+		<string>F95</string>
 		<string>for</string>
 		<string>FOR</string>
 		<string>fpp</string>
 		<string>FPP</string>
-		<string>f77</string>
-		<string>f90</string>
-		<string>f95</string>
-		<string>F90</string>
-		<string>F95</string>
-		<string>F</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>(?i)-[*]- mode: f90 -[*]-</string>
+	<key>foldingStartMarker</key>
+	<string>^\s*(?i:(if|for|do|subroutine|function))\s.*$</string>
+	<key>foldingStopMarker</key>
+	<string>^\s*(?i:(end)).*$</string>
 	<key>keyEquivalent</key>
 	<string>^~F</string>
 	<key>name</key>
@@ -29,7 +32,7 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)
-                (?: (?i:SUBROUTINE\s+) | (?i:FUNCTION\s+) )
+                (?: (?i:subroutine\s+) | (?i:function\s+) )
               	([A-Za-z_][A-Za-z0-9_:]+)
               	 \s*\((?=[^)\n]*)
               </string>
@@ -55,33 +58,54 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^[Cc] (.*)$</string>
+			<string>\b(?i:(use|if|for|do|go\sto|then|else|end|assign|backspace|call|close|continue|endfile|inquire|open|print|read|return|rewind|stop|write))\b</string>
+			<key>name</key>
+			<string>keyword.control.fortran</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^[Cc]</string>
+			<key>end</key>
+			<string>$\n?</string>
 			<key>name</key>
 			<string>comment.line.c.fortran.punchcard-style</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\\s*\n</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b(?i:(BLOCKsDATA|CHARACTER|COMMON|DATA|DIMENSION|DOUBLE\sPRECISION|ENTRY|EQUIVALENCE|EXTERNAL|FORMAT|FUNCTION|IMPLICIT|INTEGER|INTRINSIC|LOGICAL|PARAMETER|PROGRAM|REAL|SAVE|SUBROUTINE))\b</string>
+			<key>begin</key>
+			<string>^[*]</string>
+			<key>end</key>
+			<string>$\n?</string>
 			<key>name</key>
-			<string>keyword.other.non-executable.fortran</string>
+			<string>comment.line.asterisk.fortran.modern</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\\s*\n</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b(?i:(ASSIGN|BACKSPACE|CALL|CLOSE|CONTINUE|DO|END|ENDFILE|GO\sTO|IF|THEN|ELSE|INQUIRE|OPEN|PRINT|READ|RETURN|REWIND|STOP|WRITE))\b</string>
+			<key>begin</key>
+			<string>[!]</string>
+			<key>end</key>
+			<string>$\n?</string>
 			<key>name</key>
-			<string>keyword.other.executable.fortran</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(?i:(\.GT\.|\.GE\.|\.LT\.|\.LE\.|\.EQ\.|\.NE\.|\.NOT\.|\.AND\.|\.OR\.|\.EQV\.|\.NEQV\.))\b</string>
-			<key>name</key>
-			<string>keyword.operator.fortran</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))([eEdD](\+|-)?[0-9]+)?)(_[a-zA-Z]+)?\b</string>
-			<key>name</key>
-			<string>constant.numeric.fortran</string>
+			<string>comment.line.exclamation.fortran.modern</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\\s*\n</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -102,32 +126,125 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*#.*$\n?</string>
+			<string>\b(?i:data|double|block\sdata|double\sprecision|entry|equivalence|integer|real|character|intrinsic|logical|parameter)\b</string>
 			<key>name</key>
-			<string>keyword.control.import.fortran</string>
+			<string>storage.type.fortran</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?x) (?: (^[!] .*$\n?) | (?:! .*$\n?))</string>
+			<string>\b(?i:(private|public|external|format|implicit|common|intent|in|out|inout))\b</string>
 			<key>name</key>
-			<string>comment.line.exclamation.fortran.modern</string>
+			<string>storage.modifier.fortran</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(^\*.*$\n?)</string>
-			<key>name</key>
-			<string>comment.line.asterisk.fortran.modern</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(?i:(MODULE|USE|PRIVATE|PUBLIC|RECURSIVE|INTENT|OPTIONAL))\b</string>
+			<string>\b(?i:(recursive|optional))\b</string>
 			<key>name</key>
 			<string>keyword.other.fortran.90</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(program|save|subroutine|module))\b</string>
+			<key>name</key>
+			<string>keyword.other.fortran</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(r8|r4|TRUE|FALSE))\b</string>
+			<key>name</key>
+			<string>constant.language.fortran</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(\.and\.|\.or\.|\.eq\.|\.lt\.|\.le\.|\.gt\.|\.ge\.|\.ne\.|\.not\.|\.eqv\.|\.neqv\.))\b</string>
+			<key>name</key>
+			<string>keyword.operator.fortran</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b((0(x|X)[0-9a-fA-F]*)|([0-9\.]*_[ri][0-9]+)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+			<key>name</key>
+			<string>constant.numeric.fortran</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?x)
+        		^\s*\#\s*(define)\s+             # define
+        		((?&lt;id&gt;[a-zA-Z_][a-zA-Z0-9_]*))  # macro name
+        		\((
+        			\s* \g&lt;id&gt; \s*              # first argument
+        			(, \s* \g&lt;id&gt; \s*)*         # additional arguments
+        		)\)
+        	</string>
+			<key>end</key>
+			<string>(?=(?://|/\*))|$</string>
+			<key>name</key>
+			<string>meta.tag.preprocessor.macro.fortran</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*#\s*(include|import)\b\s+</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.import.fortran</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?=(?://|/\*))|$</string>
+			<key>name</key>
+			<string>meta.preprocessor.include.fortran</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\\s*\n</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>end</key>
+					<string>"</string>
+					<key>name</key>
+					<string>string.quoted.double.include.fortran</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>&lt;</string>
+					<key>end</key>
+					<string>&gt;</string>
+					<key>name</key>
+					<string>string.quoted.other.lt-gt.include.fortran</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*#\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef|endif)\b</string>
+			<key>end</key>
+			<string>(?=(?://|/\*))|$</string>
+			<key>name</key>
+			<string>meta.preprocessor.fortran</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\\s*\n</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(dimension|function))\b</string>
+			<key>name</key>
+			<string>keyword.other.non-executable.fortran</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
 	<string>source.fortran</string>
 	<key>uuid</key>
-	<string>1BA1536A-6B1D-11D9-B849-000D93589AF6</string>
+	<string>45253F88-F7CC-49C5-9C32-F3FADD2AB579</string>
 </dict>
 </plist>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Spell Checking: Disable for Include Strings</string>
+	<key>scope</key>
+	<string>source.fortran meta.preprocessor.include string</string>
+	<key>settings</key>
+	<dict>
+		<key>spellChecking</key>
+		<integer>0</integer>
+	</dict>
+	<key>uuid</key>
+	<string>3A48C5DB-0AB8-42FD-8F99-84C30C155168</string>
+</dict>
+</plist>

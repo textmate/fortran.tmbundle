@@ -34,7 +34,7 @@
 			<string>(?x)
                 (?: (?i:subroutine\s+) | (?i:function\s+) )
               	([A-Za-z_][A-Za-z0-9_:]+)
-              	 \s*\((?=[^)\n]*)
+              	 \s*(\()(?=[^)\n]*)
               </string>
 			<key>beginCaptures</key>
 			<dict>
@@ -43,9 +43,22 @@
 					<key>name</key>
 					<string>entity.name.function.fortran</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.parameters.fortran</string>
+				</dict>
 			</dict>
 			<key>end</key>
 			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.parameters.fortran</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.function.fortran</string>
 			<key>patterns</key>
@@ -65,6 +78,14 @@
 		<dict>
 			<key>begin</key>
 			<string>^[Cc]</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.fortran</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>$\n?</string>
 			<key>name</key>
@@ -80,6 +101,14 @@
 		<dict>
 			<key>begin</key>
 			<string>^[*]</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.fortran</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>$\n?</string>
 			<key>name</key>
@@ -95,6 +124,14 @@
 		<dict>
 			<key>begin</key>
 			<string>[!]</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.fortran</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>$\n?</string>
 			<key>name</key>
@@ -110,8 +147,24 @@
 		<dict>
 			<key>begin</key>
 			<string>'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.fortran</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.fortran</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>string.quoted.single.fortran</string>
 			<key>patterns</key>
@@ -183,10 +236,15 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*#\s*(include|import)\b\s+</string>
+			<string>^\s*(#)\s*(include|import)\b\s+</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.preprocessor.fortran</string>
+				</dict>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.control.import.fortran</string>
@@ -205,16 +263,48 @@
 				<dict>
 					<key>begin</key>
 					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.fortran</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.fortran</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>string.quoted.double.include.fortran</string>
 				</dict>
 				<dict>
 					<key>begin</key>
 					<string>&lt;</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.fortran</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>&gt;</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.fortran</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>string.quoted.other.lt-gt.include.fortran</string>
 				</dict>

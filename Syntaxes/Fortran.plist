@@ -46,7 +46,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.parameters.fortran</string>
+					<string>punctuation.definition.parameters.fortran</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -56,7 +56,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.parameters.fortran</string>
+					<string>punctuation.definition.parameters.fortran</string>
 				</dict>
 			</dict>
 			<key>name</key>

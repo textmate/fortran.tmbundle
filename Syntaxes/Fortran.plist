@@ -16,11 +16,13 @@
 		<string>FOR</string>
 		<string>fpp</string>
 		<string>FPP</string>
+		<string>dmod1</string>
+		<string>dt</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>(?i)-[*]- mode: f90 -[*]-</string>
 	<key>foldingStartMarker</key>
-	<string>^\s*(?i:(if|for|do|subroutine|function))\s.*$</string>
+	<string>^\s*(?i:(if|for|do|module(?!\s*procedure)|interface|type(?!\s*\()|subroutine|function))\s.*$</string>
 	<key>foldingStopMarker</key>
 	<string>^\s*(?i:(end)).*$</string>
 	<key>keyEquivalent</key>
@@ -34,7 +36,7 @@
 			<string>(?x)
                 (?: (?i:subroutine\s+) | (?i:function\s+) )
               	([A-Za-z_][A-Za-z0-9_:]+)
-              	 \s*(\()(?=[^)\n]*)
+              	 \s*((\()(?=[^)\n]*))?
               </string>
 			<key>beginCaptures</key>
 			<dict>
@@ -71,7 +73,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:(use|if|for|do|go\sto|then|else|end|assign|backspace|call|close|continue|endfile|inquire|open|print|read|return|rewind|stop|write))\b</string>
+			<string>\b(?i:(use|if|for|do|go\sto|then|else|function|end|enddo|endif|contains|assign|backspace|call|close|continue|endfile|inquire|open|print|read|return|rewind|stop|write))\b</string>
 			<key>name</key>
 			<string>keyword.control.fortran</string>
 		</dict>
@@ -178,8 +180,41 @@
 			</array>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.fortran</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>"</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.fortran</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.double.fortran</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.fortran</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>match</key>
-			<string>\b(?i:data|double|block\sdata|double\sprecision|entry|equivalence|integer|real|character|intrinsic|logical|parameter)\b</string>
+			<string>\b(?i:data|double|block\sdata|double\sprecision|type(?=\s*\()|entry|equivalence|integer|real|character|intrinsic|logical|parameter)\b</string>
 			<key>name</key>
 			<string>storage.type.fortran</string>
 		</dict>
@@ -191,13 +226,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:(recursive|optional))\b</string>
+			<string>\b(?i:(recursive|optional|interface|procedure|module|pointer|target))\b</string>
 			<key>name</key>
 			<string>keyword.other.fortran.90</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:(program|save|subroutine|module))\b</string>
+			<string>\b(?i:(program|save|subroutine|function|module|none))\b</string>
 			<key>name</key>
 			<string>keyword.other.fortran</string>
 		</dict>
@@ -209,9 +244,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:(\.and\.|\.or\.|\.eq\.|\.lt\.|\.le\.|\.gt\.|\.ge\.|\.ne\.|\.not\.|\.eqv\.|\.neqv\.))\b</string>
+			<string>(?i:(\.and\.|\.or\.|\.eq\.|\.lt\.|\.le\.|\.gt\.|\.ge\.|\.ne\.|\.not\.|\.eqv\.|\.neqv\.))</string>
 			<key>name</key>
 			<string>keyword.operator.fortran</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(\=\=|\/\=|\&gt;\=|\&gt;|\&lt;|\&lt;\=|\%|\=\&gt;|\=|\:\:)</string>
+			<key>name</key>
+			<string>keyword.operator.fortran.90</string>
 		</dict>
 		<dict>
 			<key>match</key>

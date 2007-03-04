@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>contactEmailRot13</key>
+	<string>puevf@pwnpx.pbz</string>
+	<key>contactName</key>
+	<string>Chris Thomas</string>
+	<key>description</key>
+	<string>Support for the &lt;a href="http://en.wikipedia.org/wiki/Fortran"&gt;Fortran&lt;/a&gt; programming language.</string>
 	<key>mainMenu</key>
 	<dict>
 		<key>items</key>

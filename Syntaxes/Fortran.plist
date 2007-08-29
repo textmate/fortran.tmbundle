@@ -73,7 +73,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:(use|if|for|do|go\sto|then|else|function|end|enddo|endif|contains|assign|backspace|call|close|continue|endfile|inquire|open|print|read|return|rewind|stop|write))\b</string>
+			<string>\b(?i:(use|if|for|do|go\s*to|then|else|elseif|function|end|enddo|endif|contains|assign|backspace|call|close|continue|endfile|inquire|include|cycle|exit|open|print|read|return|rewind|stop|select|case|default|endselect|while|write))\b</string>
 			<key>name</key>
 			<string>keyword.control.fortran</string>
 		</dict>

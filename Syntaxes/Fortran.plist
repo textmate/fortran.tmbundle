@@ -147,6 +147,8 @@
 			</array>
 		</dict>
 		<dict>
+			<key>applyEndPatternLast</key>
+			<integer>1</integer>
 			<key>begin</key>
 			<string>'</string>
 			<key>beginCaptures</key>
@@ -173,13 +175,15 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\\.</string>
+					<string>''</string>
 					<key>name</key>
-					<string>constant.character.escape.fortran</string>
+					<string>constant.character.escape.apostrophe.fortran</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
+			<key>applyEndPatternLast</key>
+			<integer>1</integer>
 			<key>begin</key>
 			<string>"</string>
 			<key>beginCaptures</key>
@@ -206,9 +210,9 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\\.</string>
+					<string>""</string>
 					<key>name</key>
-					<string>constant.character.escape.fortran</string>
+					<string>constant.character.escape.quote.fortran</string>
 				</dict>
 			</array>
 		</dict>

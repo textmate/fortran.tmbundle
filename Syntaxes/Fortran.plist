@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -34,8 +34,8 @@
 		<dict>
 			<key>begin</key>
 			<string>(?x)
-                (?: (?i:subroutine\s+) | (?i:function\s+) )
-              	([A-Za-z_][A-Za-z0-9_:]+)
+                ( (?i:subroutine\s+) | (?i:function\s+) )
+              	([A-Za-z_][A-Za-z0-9_:]*)
               	 \s*((\()(?=[^)\n]*))?
               </string>
 			<key>beginCaptures</key>
@@ -43,9 +43,14 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.fortran</string>
+					<string>storage.type.function.fortran</string>
 				</dict>
 				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.fortran</string>
+				</dict>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.fortran</string>

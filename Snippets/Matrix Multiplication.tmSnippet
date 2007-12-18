@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>matmul($1,$2)</string>
+	<key>name</key>
+	<string>Matrix Multiplication</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>mat</string>
+	<key>uuid</key>
+	<string>E8684191-D405-4BD8-BCEB-8BC9E150550B</string>
+</dict>
+</plist>

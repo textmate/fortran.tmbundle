@@ -3,14 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>print*, </string>
+	<string> &amp;
+</string>
+	<key>keyEquivalent</key>
+	<string>^</string>
 	<key>name</key>
-	<string>Quick Print</string>
+	<string>Line Continuation</string>
 	<key>scope</key>
 	<string>source.fortran</string>
-	<key>tabTrigger</key>
-	<string>pr</string>
 	<key>uuid</key>
-	<string>B907E3F4-F0DD-41BF-8148-98486B9F7654</string>
+	<string>0B000E20-A4F2-495A-B0B1-242851333225</string>
 </dict>
 </plist>

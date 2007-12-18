@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>inquire(file=${1:filename}, opened=${2:ioopen}, exists=${3:ioexist}, number=${4:iounit})</string>
+	<key>name</key>
+	<string>Inquire (by Filename)</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>inq</string>
+	<key>uuid</key>
+	<string>1A5B5A09-1080-48CF-A4C3-3F81ACE69074</string>
+</dict>
+</plist>

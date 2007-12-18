@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>open(unit=${1:iounit}, iostat=${3:ios}, status="${4:scratch}", action="${5:readwrite}")
+if ( $3 /= 0 ) stop "Error opening scratch file on unit $1"
+</string>
+	<key>name</key>
+	<string>Scratch File</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>open</string>
+	<key>uuid</key>
+	<string>3693BFC4-76F5-4ED3-837B-BD383BBAC5B0</string>
+</dict>
+</plist>

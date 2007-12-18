@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>write(unit=${1:iounit}, fmt="(${2:format string})", iostat=${3:ios}${4:, advance='NO'}) ${5:variables}
+if ( $3 /= 0 ) stop "Write error in file unit $1"
+</string>
+	<key>name</key>
+	<string>Write</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>write</string>
+	<key>uuid</key>
+	<string>A96BC9D7-5A5C-413C-8F3D-8155F98CCC79</string>
+</dict>
+</plist>

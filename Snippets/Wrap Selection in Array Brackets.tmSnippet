@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>(/ $TM_SELECTED_TEXT$0 /)</string>
+	<key>keyEquivalent</key>
+	<string>@A</string>
+	<key>name</key>
+	<string>Wrap Selection in Array Brackets</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>uuid</key>
+	<string>E5E4BACF-96DD-43EF-A400-D7D3F6ABBF85</string>
+</dict>
+</plist>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios}, &amp;
+     status="${4:old/new/replace/scratch/unknown}", action="${5:read/write/readwrite}", access="${7:sequential/direct}"${7/(direct)$|.*/(?1:, recl=)/}$0)
+if ( $3 /= 0 ) stop "Error opening file ${2/[\"\'](.*)[\"\']/$1/}"</string>
+	<key>name</key>
+	<string>Open File</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>open</string>
+	<key>uuid</key>
+	<string>48F02C1F-F6FA-444F-8CE7-7B81C7A7344B</string>
+</dict>
+</plist>

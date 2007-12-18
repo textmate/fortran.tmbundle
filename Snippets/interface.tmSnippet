@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>interface ${1:name}
+	$0
+end interface ! $1</string>
+	<key>name</key>
+	<string>interface</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>interf</string>
+	<key>uuid</key>
+	<string>358E0BE9-B020-4932-A421-79F269CE10A1</string>
+</dict>
+</plist>

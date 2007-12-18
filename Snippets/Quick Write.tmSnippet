@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>write(unit=${1:iounit}, fmt=*) ${0:variables}
+</string>
+	<key>name</key>
+	<string>Quick Write</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>wr</string>
+	<key>uuid</key>
+	<string>87B37A6D-B542-4502-94CA-521A92E056D6</string>
+</dict>
+</plist>

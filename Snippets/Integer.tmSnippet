@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>integer${1:(${2:kind})}${3:, ${4:attributes}} :: ${5:name}</string>
+	<key>name</key>
+	<string>Integer</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>int</string>
+	<key>uuid</key>
+	<string>F3344347-B9EF-4574-B15E-22170D50D850</string>
+</dict>
+</plist>

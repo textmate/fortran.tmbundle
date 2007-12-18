@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>spread(${1:source}, dim=${2:1}, ncopies=$3)</string>
+	<key>name</key>
+	<string>spread</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>spread</string>
+	<key>uuid</key>
+	<string>7331B9EE-F03D-4472-9243-992184B260A6</string>
+</dict>
+</plist>

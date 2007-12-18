@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>subroutine ${1:name}
+	${2:argument type}, intent(${3:inout}) :: ${1/\w+\((.*)\)|.*/$1/}
+	$0
+end subroutine ${1/(\w+).*/$1/}</string>
+	<key>name</key>
+	<string>subroutine</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>sub</string>
+	<key>uuid</key>
+	<string>73DCA7B1-1444-418A-89ED-6F44B061538F</string>
+</dict>
+</plist>

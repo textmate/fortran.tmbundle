@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:name}: do${2: ${3:i} = ${4:1}, ${5:100}, ${6:1}}
+	$0
+end do $1</string>
+	<key>name</key>
+	<string>named: do</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>ndo</string>
+	<key>uuid</key>
+	<string>5F5CE350-E65B-4A12-9DE4-7F520EA7CEDA</string>
+</dict>
+</plist>

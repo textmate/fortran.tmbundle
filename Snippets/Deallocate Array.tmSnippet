@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>if (allocated($1)) deallocate(${1:array}, stat=${2:err})
+if ($2 /= 0) print *, "$1: Deallocation request denied$0"</string>
+	<key>name</key>
+	<string>Deallocate Array</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>deal</string>
+	<key>uuid</key>
+	<string>8AA9DF85-9F20-417E-A71A-5B5BC555B0AA</string>
+</dict>
+</plist>

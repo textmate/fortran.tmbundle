@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>minval(${1:source}${2:, dim=${3:1}}${4:, mask=${5:($1&gt;0)}})</string>
+	<key>name</key>
+	<string>Minimum Value</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>minval</string>
+	<key>uuid</key>
+	<string>4AD4A84B-5110-4B49-9E0F-88B08A5AAF97</string>
+</dict>
+</plist>

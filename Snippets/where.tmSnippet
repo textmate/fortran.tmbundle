@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>where ( $1 ${2:==} $3 )
+	$0
+end where</string>
+	<key>name</key>
+	<string>where</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>whe</string>
+	<key>uuid</key>
+	<string>EDEB3A12-66A0-435B-A15D-28C18444A242</string>
+</dict>
+</plist>

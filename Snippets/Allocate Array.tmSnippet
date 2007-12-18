@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>allocate(${1:array}, stat=${2:err})
+if ($2 /= 0) print *, "${1/(\w+).*/$1/}: Allocation request denied"
+</string>
+	<key>name</key>
+	<string>Allocate Array</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>al</string>
+	<key>uuid</key>
+	<string>51F171BF-D317-4510-A0E1-22565AFFDF55</string>
+</dict>
+</plist>

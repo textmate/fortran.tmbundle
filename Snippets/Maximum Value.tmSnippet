@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>maxval(${1:source}${2:, dim=${3:1}}${4:, mask=${5:($1&gt;0)}})</string>
+	<key>name</key>
+	<string>Maximum Value</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>tabTrigger</key>
+	<string>maxval</string>
+	<key>uuid</key>
+	<string>8781D199-2E4E-4D11-BFF3-F8729D9523C1</string>
+</dict>
+</plist>

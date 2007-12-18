@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>echo "function $TM_CURRENT_WORD(\$1)"
+echo "	\$2, intent(\${3:inout}) :: \$1"
+echo "	\$4 :: $TM_CURRENT_WORD"
+echo "	\$0"
+echo "end function $TM_CURRENT_WORD"</string>
+	<key>fallbackInput</key>
+	<string>word</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>$</string>
+	<key>name</key>
+	<string>Function based on current word</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>uuid</key>
+	<string>0D6DE4E4-53AF-44E4-B8B8-D4F36FF96F77</string>
+</dict>
+</plist>

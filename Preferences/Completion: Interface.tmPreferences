@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completion: Interface</string>
+	<key>scope</key>
+	<string>source.fortran meta.function.interface</string>
+	<key>settings</key>
+	<dict>
+		<key>completions</key>
+		<array>
+			<string>module procedure</string>
+			<string>operator</string>
+			<string>assignment(=)</string>
+		</array>
+		<key>disableDefaultCompletion</key>
+		<integer>0</integer>
+	</dict>
+	<key>uuid</key>
+	<string>661D40B0-ABA8-4F53-93B8-9A3C96B74B58</string>
+</dict>
+</plist>

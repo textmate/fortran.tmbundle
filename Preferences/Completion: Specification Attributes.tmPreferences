@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completion: Specification Attributes</string>
+	<key>scope</key>
+	<string>source.fortran meta.specification</string>
+	<key>settings</key>
+	<dict>
+		<key>completions</key>
+		<array>
+			<string>parameter</string>
+			<string>dimension()</string>
+			<string>allocatable</string>
+			<string>intent()</string>
+		</array>
+		<key>disableDefaultCompletion</key>
+		<integer>1</integer>
+	</dict>
+	<key>uuid</key>
+	<string>A5DF069E-A2A5-463A-A8A9-302A02B13DBC</string>
+</dict>
+</plist>

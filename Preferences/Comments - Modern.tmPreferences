@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Comments - Punchcard</string>
+	<string>Comments - Modern</string>
 	<key>scope</key>
-	<string>source.fortran</string>
+	<string>source.fortran.modern</string>
 	<key>settings</key>
 	<dict>
 		<key>shellVariables</key>
@@ -14,7 +14,7 @@
 				<key>name</key>
 				<string>TM_COMMENT_START</string>
 				<key>value</key>
-				<string>C </string>
+				<string>! </string>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -30,19 +30,13 @@
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>TM_COMMENT_DISABLE_INDENT</string>
-				<key>value</key>
-				<string>yes</string>
-			</dict>
-			<dict>
-				<key>name</key>
 				<string>TM_COMMENT_START_2</string>
 				<key>value</key>
-				<string>c </string>
+				<string>* </string>
 			</dict>
 		</array>
 	</dict>
 	<key>uuid</key>
-	<string>00465FB7-057F-4E7E-AFAC-B059DB0C03CF</string>
+	<string>3F504D8D-A4FA-4CB9-9469-FAE360409C1E</string>
 </dict>
 </plist>

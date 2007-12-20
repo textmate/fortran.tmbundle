@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Spell Checking: Off for Include Strings</string>
+	<string>Symbol List: Exclude Ends </string>
 	<key>scope</key>
-	<string>source.fortran meta.preprocessor.include string</string>
+	<string>source.fortran entity.name.function.end, source.fortran entity.name.type.end</string>
 	<key>settings</key>
 	<dict>
-		<key>spellChecking</key>
+		<key>showInSymbolList</key>
 		<integer>0</integer>
 	</dict>
 	<key>uuid</key>
-	<string>3A48C5DB-0AB8-42FD-8F99-84C30C155168</string>
+	<string>D3D60488-4BDD-468A-B1F4-19CC198D419A</string>
 </dict>
 </plist>

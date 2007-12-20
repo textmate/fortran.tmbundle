@@ -5,31 +5,42 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string># Source some support functions we need.
+	<string>#
+#	Compile a single file to a.out
+#
+
+# Get some HTML niceties
 . "${TM_SUPPORT_PATH}/lib/html.sh"
+. "${TM_SUPPORT_PATH}/lib/webpreview.sh"
 
-cd ${TM_DIRECTORY}
-
-htmlHeader "Compiling Fortran"
-echo "&lt;h1&gt;Starting Fortran Compile&lt;/h1&gt;"
-echo
-
-# Check if we actually have a fortran compiler
+# Check existence of fortran compiler
+# set TM_FORTRAN to gfortran if it is not already set
 : ${TM_FORTRAN:=gfortran}
+# require the existence of the command and show HTML error message if the command is not found
 require_cmd "$TM_FORTRAN" "You must set the &lt;tt&gt;TM_FORTRAN&lt;/tt&gt; variable to the full path of your Fortran compiler (e.g. &lt;tt&gt;/usr/local/bin/gfortran&lt;/tt&gt;). You may also set &lt;tt&gt;TM_FFLAGS&lt;/tt&gt; for any Fortran compiler options."
 
-"$TM_FORTRAN" $TM_FFLAGS "$TM_FILEPATH"
-status=$?
-if [[ "${status}" -ne "0" ]]; then
-	echo "&lt;h1&gt;Compilation Failed&lt;/h1&gt;"
+# Prepare output window
+html_header "`basename $TM_FORTRAN` compile"
+
+# TIP: from Allan Odgaard
+# 	command1 &amp;&gt; &gt;(command2)
+# pipes the output of 'command1' to 'command2' but the status is still evaluated from 'command1'. Really cool.
+
+# Pipe the output of the compiler to 'pre' which formats it nicely for HTML output
+if cd "$TM_DIRECTORY" &amp;&amp; "$TM_FORTRAN" $TM_FFLAGS `basename "$TM_FILEPATH"` &amp;&gt; &gt;(pre); then
+	echo "&lt;/pre&gt;"
+	echo "&lt;h2&gt;Successfully compiled a.out&lt;/h2&gt;"
 else
-	echo "&lt;h1&gt;Successfully compiled a.out&lt;/h1&gt;"
-	closeWindow
+	echo "&lt;/pre&gt;"
+	echo "&lt;h2&gt;Compilation failed&lt;/h2&gt;"
 fi
-htmlFooter
+
+html_footer
 </string>
 	<key>input</key>
 	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@b</string>
 	<key>name</key>
 	<string>Compile Single File</string>
 	<key>output</key>

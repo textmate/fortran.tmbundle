@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#
+#	Compile a single file to a.out and execute the code in the frontmost Terminal
+#
+
+# Get some HTML niceties
+. "${TM_SUPPORT_PATH}/lib/html.sh"
+. "${TM_SUPPORT_PATH}/lib/webpreview.sh"
+
+# Check existence of fortran compiler
+# set TM_FORTRAN to gfortran if it is not already set
+: ${TM_FORTRAN:=gfortran}
+# require the existence of the command and show HTML error message if the command is not found
+require_cmd "$TM_FORTRAN" "You must set the &lt;tt&gt;TM_FORTRAN&lt;/tt&gt; variable to the full path of your Fortran compiler (e.g. &lt;tt&gt;/usr/local/bin/gfortran&lt;/tt&gt;). You may also set &lt;tt&gt;TM_FFLAGS&lt;/tt&gt; for any Fortran compiler options."
+
+# Prepare output HTML in case the compilation fails
+html_header "`basename $TM_FORTRAN` compile"
+
+# TIP (from Allan Odgaard)
+#	command1 &amp;&gt; &gt;(command2)
+# pipes the output of 'command1' to 'command2' but the status is still evaluated from 'command1'. Really cool.
+
+# Pipe the output of the compiler to 'pre' which formats it nicely for HTML output
+if cd "$TM_DIRECTORY" &amp;&amp; "$TM_FORTRAN" $TM_FFLAGS `basename "$TM_FILEPATH"` &amp;&gt; &gt;(pre); then
+	
+	# if compilation went well, execute the code in the frontmost Terminal
+	# TIP (from jacobolus): using -SOMETHING as entry point allows the end SOMETHING to be indented with the rest of the code
+	# TIP (from infinilight): use TM_TERMINAL to detect which terminal to run
+	TM_TERMINAL=`echo $TM_TERMINAL | tr "[:upper:]" "[:lower:]"`
+	echo $TM_TERMINAL
+	
+	if [ "$TM_TERMINAL" == "iterm" ]; then
+		# iTerm code - simple and not necessarily robust
+		osascript &lt;&lt;-APPLESCRIPT
+			tell application "iTerm"
+				activate
+				if not (exists current terminal) then
+					set myterm to (make new terminal)
+					tell myterm
+						launch session "Default Session"
+					end tell
+				end if
+				tell current terminal
+					tell current session
+						write text "cd " &amp; "$TM_DIRECTORY"
+						write text "./a.out"
+					end tell
+				end tell
+			end tell
+			tell application "TextMate"
+				activate
+			end tell
+		APPLESCRIPT
+	else
+		# Apple Terminal code - checks that a window exists and is not buzy
+		osascript &lt;&lt;-APPLESCRIPT
+			tell application "Terminal"
+				activate
+				set windowCount to (count of the windows)
+				if windowCount is greater than 0 then
+					repeat with w from 1 to windowCount
+						if window 1 is busy then
+							set frontmost of window 1 to false
+						else
+							do script "cd " &amp; "$TM_DIRECTORY" in window 1
+							do script "./a.out" in window 1
+							set frontmost of window 1 to true
+							return
+						end if
+					end repeat
+				end if
+				tell window 1
+					do script "cd " &amp; "$TM_DIRECTORY" &amp; " &amp;&amp; ./a.out"
+					set frontmost to true
+				end tell
+			end tell
+			tell application "TextMate"
+				activate
+			end tell
+		APPLESCRIPT
+	fi
+
+	exit_discard
+
+else
+	# if compilation failed, show compiler's output in HTML preview
+	exit_show_html "&lt;h2&gt;Compilation failed&lt;/h2&gt;"
+
+fi
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Compile &amp; Execute Single File</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>uuid</key>
+	<string>EDD1628F-BB8C-4EC1-AFBD-90EC260F45B9</string>
+</dict>
+</plist>

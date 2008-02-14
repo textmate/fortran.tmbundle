@@ -147,10 +147,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.fortran.punchcard</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>source.fortran.modern</string>
 				</dict>
 			</array>

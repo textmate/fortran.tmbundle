@@ -1,4 +1,4 @@
-The `'fmt='` specifier in a `read` or `write` statement can give either the line number of a `format` statement, an actual format string or a `*`, for free format.
+The `'fmt='` specifier in a `read` or `write` statement can give either the line number of a `format` statement, an actual format string, or a `*` for free format.
 
 # Syntax
 

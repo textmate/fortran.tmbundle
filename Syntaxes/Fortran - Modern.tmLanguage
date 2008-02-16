@@ -23,13 +23,13 @@
 				(?i:						# case insensitive match
 					(
 						if.*then				# if ... then
-						|for|do|select\s+case|where|interface|subroutine	# some easy keywords
+						|for|do|select\s+case|where|interface	# some easy keywords
 						|module(?!\s*procedure)	# module not followed by procedure
 						|type(?!\s*\()		# type but not type(
 					)
 			 		|					# ...or...
 					(
-						[a-zA-Z]*(?&lt;!end)\s*function	# possibly some letters, but not the word end, and a space, then function
+						[a-z]*(?&lt;!end)\s*(function|subroutine)	# possibly some letters, but not the word end, and a space, then function
 					)
 				)
 				.*$						# anything until the end of the line
@@ -48,7 +48,7 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>^[Cc]</string>
+			<string>^[Cc]\s+</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -296,7 +296,7 @@
 			<key>comment</key>
 			<string>statements controling the flow of the program</string>
 			<key>match</key>
-			<string>\b(?i:(select\s+case|case(\s+default)?|end\s+select))\b</string>
+			<string>\b(?i:(select\s+case|case(\s+default)?|end\s+select|use|(end\s+)?forall))\b</string>
 			<key>name</key>
 			<string>keyword.control.fortran.modern</string>
 		</dict>
@@ -320,7 +320,7 @@
 			<key>comment</key>
 			<string>operators</string>
 			<key>match</key>
-			<string>(\%|\=\&gt;|::)</string>
+			<string>(\%|\=\&gt;)</string>
 			<key>name</key>
 			<string>keyword.operator.fortran.modern</string>
 		</dict>

@@ -60,7 +60,7 @@
 			<key>end</key>
 			<string>$\n?</string>
 			<key>name</key>
-			<string>invalid.deprecated.comment.line.c.fortran</string>
+			<string>invalid.deprecated.comment.line.fortran</string>
 			<key>patterns</key>
 			<array>
 				<dict>

@@ -29,7 +29,7 @@ fi
 #
 if [[ `which mdfind` != *"not found" ]]; then
 	# we have Spotlight
-	files=`${TM_RUBY:-ruby} "$TM_BUNDLE_SUPPORT/SpotlightSearch.rb" "$header"`
+	files=`ruby "$TM_BUNDLE_SUPPORT/SpotlightSearch.rb" "$header"`
 else
 	# old method
 	arr=("/usr/include"

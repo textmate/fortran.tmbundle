@@ -47,29 +47,6 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>begin</key>
-			<string>^[Cc]\s+</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.fortran</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>$\n?</string>
-			<key>name</key>
-			<string>invalid.deprecated.comment.line.fortran</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\\\s*\n</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
 			<key>include</key>
 			<string>source.fortran</string>
 		</dict>

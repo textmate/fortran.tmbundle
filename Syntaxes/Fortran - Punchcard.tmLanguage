@@ -216,7 +216,7 @@
 			<key>comment</key>
 			<string>operators</string>
 			<key>match</key>
-			<string>((?&lt;!\=)\=(?!\=)|\-|\+|\/\/|\/|\*|::)</string>
+			<string>((?&lt;!\=)\=(?!\=)|\-|\+|\/\/|\/|(?!^)\*|::)</string>
 			<key>name</key>
 			<string>keyword.operator.fortran</string>
 		</dict>
@@ -400,7 +400,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^[Cc]</string>
+			<string>^[Cc](?=\b|[Cc])</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -413,6 +413,29 @@
 			<string>$\n?</string>
 			<key>name</key>
 			<string>comment.line.c.fortran</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\\s*\n</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.fortran</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$\n?</string>
+			<key>name</key>
+			<string>comment.line.asterisk.fortran</string>
 			<key>patterns</key>
 			<array>
 				<dict>

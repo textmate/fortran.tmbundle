@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Folding</string>
+	<key>scope</key>
+	<string>source.fortran</string>
+	<key>settings</key>
+	<dict>
+		<key>foldingStartMarker</key>
+		<string>(?x:							# extended mode
+		^\s*											# start of line and some space
+		(?i:											# case insensitive match
+			(
+				if.*then								# if ... then
+				|for|do|select\s+case|where|interface	# some easy keywords
+				|module(?!\s*procedure)					# module not followed by procedure
+				|type(?!\s*\()							# type but not type(
+			)
+			|											# ...or...
+			(
+				[a-z]*(?&lt;!end)\s*(function|subroutine)	# possibly some letters, but not the word end, and a space, then function
+			)
+		)
+		.*$												# anything until the end of the line
+	)</string>
+		<key>foldingStopMarker</key>
+		<string>(?x:	# extended mode
+		^\s*					# start of line and some space
+		(?i:(end))				# the word end, case insensitive
+		.*$						# anything until the end of the line
+	)</string>
+	</dict>
+	<key>uuid</key>
+	<string>1BCD42C7-0623-4EE5-A68F-A7A78E02BC53</string>
+</dict>
+</plist>

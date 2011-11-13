@@ -5,7 +5,10 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>#
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+#
 #	Compile a single file to a.out and execute the code in the frontmost Terminal
 #
 
@@ -13,21 +16,15 @@
 . "${TM_SUPPORT_PATH}/lib/html.sh"
 . "${TM_SUPPORT_PATH}/lib/webpreview.sh"
 
-# Check existence of fortran compiler
-# set TM_FORTRAN to gfortran if it is not already set
-: ${TM_FORTRAN:=gfortran}
-# require the existence of the command and show HTML error message if the command is not found
-require_cmd "$TM_FORTRAN" "You must set the &lt;tt&gt;TM_FORTRAN&lt;/tt&gt; variable to the full path of your Fortran compiler (e.g. &lt;tt&gt;/usr/local/bin/gfortran&lt;/tt&gt;). You may also set &lt;tt&gt;TM_FFLAGS&lt;/tt&gt; for any Fortran compiler options."
-
 # Prepare output HTML in case the compilation fails
-html_header "`basename $TM_FORTRAN` compile"
+html_header "`basename "${TM_FORTRAN:-gfortran}"` compile"
 
 # TIP (from Allan Odgaard)
 #	command1 &amp;&gt; &gt;(command2)
 # pipes the output of 'command1' to 'command2' but the status is still evaluated from 'command1'. Really cool.
 
 # Pipe the output of the compiler to 'pre' which formats it nicely for HTML output
-if cd "$TM_DIRECTORY" &amp;&amp; "$TM_FORTRAN" $TM_FFLAGS `basename "$TM_FILEPATH"` &amp;&gt; &gt;(pre); then
+if cd "$TM_DIRECTORY" &amp;&amp; "${TM_FORTRAN:-gfortran}" $TM_FFLAGS "`basename "$TM_FILEPATH"`" &amp;&gt; &gt;(pre); then
 	
 	# if compilation went well, execute the code in the frontmost Terminal
 	# TIP (from jacobolus): using -SOMETHING as entry point allows the end SOMETHING to be indented with the rest of the code
@@ -96,15 +93,37 @@ fi
 </string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
 	<string>Compile &amp; Execute Single File</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>gfortran</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/gfortran</string>
+				<string>/usr/local/bin/gfortran</string>
+			</array>
+			<key>variable</key>
+			<string>TM_FORTRAN</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>source.fortran</string>
 	<key>uuid</key>
 	<string>EDD1628F-BB8C-4EC1-AFBD-90EC260F45B9</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

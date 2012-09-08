@@ -121,6 +121,8 @@ fi
 	</array>
 	<key>scope</key>
 	<string>source.fortran</string>
+	<key>semanticClass</key>
+	<string>process.build-and-run.fortran</string>
 	<key>uuid</key>
 	<string>EDD1628F-BB8C-4EC1-AFBD-90EC260F45B9</string>
 	<key>version</key>

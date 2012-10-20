@@ -49,18 +49,20 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?x:					# extended mode
+			<string>(?x:								# extended mode
 					^
-					\s*					# start of line and possibly some space
-					([a-zA-Z\(\)]*)(?&lt;!end)	# 1: possibly some type specification but not the word end
-					\s*					# possibly some space
-					(?i:(function|subroutine))\b	# 2: function or subroutine
-					\s+					# some space
-					([A-Za-z_][A-Za-z0-9_]*)		# 3: name
-					\s*					# possibly some space
-					(\()					# 4: opening parenthesis
-					([^)]*)?  		# 5: arguments (anything but a parenthesis)
-					(\))?					# 6: closing parenthesis
+					\s*									# start of line and possibly some space
+					([a-zA-Z\(\)]*)(?&lt;!end)				# 1: possibly some type specification but not the word end
+					\s*									# possibly some space
+					(?i:(function|subroutine))\b		# 2: function or subroutine
+					\s+									# some space
+					([A-Za-z_][A-Za-z0-9_]*)			# 3: name
+					\s*									# possibly some space
+					(?:									# optional parameters
+						(\()							# 4: opening parenthesis
+						([^)]*)?  						# 5: arguments (anything but a parenthesis)
+						(\))?							# 6: closing parenthesis
+					)?
 					)</string>
 			<key>beginCaptures</key>
 			<dict>
@@ -98,13 +100,13 @@
 			<key>comment</key>
 			<string>First line of function/subroutine definition</string>
 			<key>end</key>
-			<string>(?x:					# extended mode
-					((?i:end))			# 1: the word end
-					(					# followed by
-						$				# end of line
-					|					# or
-						\s*				# possibly some space
-						(?i:(function|subroutine))	# 2: function or subroutine
+			<string>(?x:									# extended mode
+					((?i:end))							# 1: the word end
+					(									# followed by
+						$								# end of line
+					|									# or
+						\s*								# possibly some space
+						(?i:(function|subroutine))		# 2: function or subroutine
 						((\s+[A-Za-z_][A-Za-z0-9_]*)?)	# 3: possibly the name
 					)
 					)</string>

@@ -9,11 +9,17 @@
 	<key>settings</key>
 	<dict>
 		<key>decreaseIndentPattern</key>
-		<string>^\s*(?i:end)\b</string>
+		<string>(?i)^\s*(end(if)?\b|(contains|else)\s*$)</string>
 		<key>increaseIndentPattern</key>
-		<string>^\s*((if.*then)|for|do|else|elseif|program|where)\b.*</string>
+		<string>(?ix)
+        ^\s*
+        (
+            (((integer\s+)?recursive|(recursive\s+)?integer)\s+)?function\b
+          | ((if.*then)|for|do|else|elseif|program|where|type|module|program|subroutine|interface)\b
+          | (contains|else)\s*$
+        )</string>
 		<key>unIndentedLinePattern</key>
-		<string>^\s*[cC]\s*.*$</string>
+		<string>^\s*[cC]\s+.*$</string>
 	</dict>
 	<key>uuid</key>
 	<string>DF8B5C60-9DCD-4180-8FE0-6CEA5050EFE7</string>

@@ -57,12 +57,6 @@
 					(?i:(function|subroutine))\b		# 2: function or subroutine
 					\s+									# some space
 					([A-Za-z_][A-Za-z0-9_]*)			# 3: name
-					\s*									# possibly some space
-					(?:									# optional parameters
-						(\()							# 4: opening parenthesis
-						([^)]*)?  						# 5: arguments (anything but a parenthesis)
-						(\))?							# 6: closing parenthesis
-					)?
 					)</string>
 			<key>beginCaptures</key>
 			<dict>
@@ -80,21 +74,6 @@
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.fortran</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.fortran</string>
-				</dict>
-				<key>5</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.fortran</string>
-				</dict>
-				<key>6</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.fortran</string>
 				</dict>
 			</dict>
 			<key>comment</key>
@@ -132,6 +111,48 @@
 			<string>meta.function.fortran</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>begin</key>
+					<string>\G\s*(\()</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.begin.fortran</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.parameters.end.fortran</string>
+						</dict>
+					</dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>variable.parameter.fortran</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.separator.arguments.fortan</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>([^\s),]*)\s*(,)?</string>
+						</dict>
+					</array>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>$self</string>

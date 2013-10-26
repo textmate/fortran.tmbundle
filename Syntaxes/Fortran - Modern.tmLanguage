@@ -201,84 +201,23 @@
 			</array>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>(^[ \t]+)?(?=!-)</string>
-			<key>beginCaptures</key>
+			<key>match</key>
+			<string>(^[ \t]+)?(!).*\n</string>
+			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.ruby</string>
+					<string>punctuation.whitespace.comment.leading.fortran</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+				<string>punctuation.definition.comment.fortran</string>
 				</dict>
 			</dict>
-			<key>end</key>
-			<string>(?!\G)</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>!-</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.fortran</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\n</string>
-					<key>name</key>
-					<string>comment.line.exclamation.mark.fortran.modern</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>\\\s*\n</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>(^[ \t]+)?(?=!)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.ruby</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(?!\G)</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>!</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.fortran</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\n</string>
-					<key>name</key>
-					<string>comment.line.exclamation.fortran.modern</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>\\\s*\n</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
+			<key>name</key>
+			<string>comment.line.exclamation.fortran.modern</string>
 		</dict>
 		<dict>
 			<key>comment</key>

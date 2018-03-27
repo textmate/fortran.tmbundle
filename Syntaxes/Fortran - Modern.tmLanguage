@@ -214,7 +214,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.ruby</string>
+					<string>punctuation.whitespace.comment.leading.fortran</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -254,7 +254,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.ruby</string>
+					<string>punctuation.whitespace.comment.leading.fortran</string>
 				</dict>
 			</dict>
 			<key>end</key>

@@ -61,11 +61,13 @@
 			<key>comment</key>
 			<string>Interface declaration of operator/assignments</string>
 			<key>end</key>
-			<string>(?x:
-					((?i:end))			# 1: the word end
-					\s*					# possibly some space
-					((?i:interface)?) 		# 2: possibly interface
-					)</string>
+			<string>(?xi)
+				(end)(?=\s|\z)						# 1: the word end
+				(?:
+					\s+
+					(interface)						# 2: possibly interface
+				)?
+			</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -114,11 +116,13 @@
 			<key>comment</key>
 			<string>Interface declaration of function/subroutines</string>
 			<key>end</key>
-			<string>(?x:				# extended mode
-					((?i:end))		# 1: the word end
-					\s*				# possibly some space
-					((?i:interface)?) 	# 2: possibly interface
-					)</string>
+			<string>(?xi)
+				(end)(?=\s|\z)						# 1: the word end
+				(?:
+					\s+
+					(interface)						# 2: possibly interface
+				)?
+			</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -144,11 +148,11 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?x:			# extended mode
-					^\s*			# begining of line and some space
-					(?i:(type))	# 1: word type
-					\s+			# some space
-					([a-zA-Z_][a-zA-Z0-9_]*)	# 2: type name
+			<string>(?x:								# extended mode
+					^\s*								# begining of line and some space
+					(?i:(type))							# 1: word type
+					\s+									# some space
+					([a-zA-Z_][a-zA-Z0-9_]*)			# 2: type name
 					)</string>
 			<key>beginCaptures</key>
 			<dict>
@@ -166,12 +170,14 @@
 			<key>comment</key>
 			<string>Type definition</string>
 			<key>end</key>
-			<string>(?x:
-					((?i:end))			# 1: the word end
-					\s*					# possibly some space
-					(?i:(type))? 			# 2: possibly the word type
+			<string>(?xi)
+				(end)(?=\s|\z)						# 1: the word end
+				(?:
+					\s+
+					(type)							# 2: possibly the word type
 					(\s+[A-Za-z_][A-Za-z0-9_]*)?	# 3: possibly the name
-					)</string>
+				)?
+			</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>

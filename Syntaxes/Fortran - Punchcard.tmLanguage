@@ -210,11 +210,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>source.fortran.modern</string>
+					<string>$base</string>
 				</dict>
 			</array>
 		</dict>
@@ -239,7 +235,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
+					<string>$base</string>
 				</dict>
 			</array>
 		</dict>
